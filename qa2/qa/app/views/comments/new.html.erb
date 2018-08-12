@@ -1,9 +1,0 @@
-<h1>New Comment</h1>
-
-<%= render 'form', comment: @comment %>
-
-<% if params[:answer_id].nil? %>
-  <%= link_to 'Back', user_question_comments_path(@user, @question) %>
-<% else %>
-  <%= link_to 'Back', user_question_answer_comments_path(@user, @question, @answer) %>
-<% end %>
