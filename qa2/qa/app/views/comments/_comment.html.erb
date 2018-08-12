@@ -1,0 +1,13 @@
+<div>
+  <strong><%= comment.user.name %> says... </strong>
+  <%= comment.body %>
+</div>
+<div class="comment-admin">
+  <% if @answer.nil? %>
+    <%= link_to 'Edit', edit_user_question_comment_path(@user, @question, comment) %> |
+    <%= link_to 'Delete', user_question_comment_path(@user, @question, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% else %>
+    <%= link_to 'Edit', edit_user_question_answer_comment_path(@user, @question, @answer, comment) %> |
+    <%= link_to 'Delete', user_question_answer_comment_path(@user, @question, @answer, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</div>

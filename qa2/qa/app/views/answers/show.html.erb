@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @answer.question.body %>
+</p>
+<p>
+  <strong>Asked by:</strong>
+  <%= @answer.question.user.name %>
+</p>
+
+<p>
+  <strong>Question Views:</strong>
+  <%= @answer.question.view_count %>
+</p>
+
+<p>
+  <strong>Answer:</strong>
+  <%= @answer.body %>
+</p>
+
+<p>
+  <strong>Answered by:</strong>
+  <%= @answer.user.name %>
+</p>
+
+<p>
+  <strong>Answer Views:</strong>
+  <%= @answer.view_count %>
+</p>
+
+<% if @answer.comments.any? %>
+<div id="comments">
+  <h3>Comments:</h3>
+  <%= render @answer.comments %>
+</div>
+<% end %>
+
+<div id="new-comment">
+  <h3>Add Comment:</h3>
+  <%= render partial: "comments/form", locals: {comment: @answer.comments.new} %>
+</div>
+
+
+
+<%= link_to 'Edit', edit_user_question_answer_path(@user, @question, @answer) %> |
+<%= link_to 'Back', user_question_path(@user, @question) %>

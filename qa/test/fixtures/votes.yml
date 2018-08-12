@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  post: one
+  post_type: Post
+  upvote: false
+
+two:
+  user: two
+  post: two
+  post_type: Post
+  upvote: false

@@ -1,0 +1,5 @@
+<h1>New Question</h1>
+
+<%= render 'form', locals: {question: @user.questions.new}  %>
+
+<%= link_to 'Back', user_questions_path %>
