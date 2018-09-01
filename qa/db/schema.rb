@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_11_213925) do
+ActiveRecord::Schema.define(version: 2018_08_20_182256) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2018_08_11_213925) do
     t.integer "views"
     t.integer "view_count"
     t.integer "vote_score"
+    t.integer "accepted_answer_id_id"
+    t.index ["accepted_answer_id_id"], name: "index_questions_on_accepted_answer_id_id"
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
