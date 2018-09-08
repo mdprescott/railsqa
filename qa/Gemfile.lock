@@ -260,7 +260,7 @@ DEPENDENCIES
   factory_bot_rails (~> 4.0)
   faker!
   jbuilder (~> 2.5)
-  listen (>= 3.0.5, < 3.2)
+  listen (~> 3.1.5)
   pg
   puma (~> 3.11)
   rails (~> 5.2.0)
@@ -279,4 +279,4 @@ RUBY VERSION
    ruby 2.3.7p456
 
 BUNDLED WITH
-   1.16.3
+   1.16.4
