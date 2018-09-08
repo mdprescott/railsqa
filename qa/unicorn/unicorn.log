@@ -1,0 +1,17 @@
+I, [2018-09-01T22:17:22.410777 #5928]  INFO -- : listening on addr=/tmp/unicorn.qa.sock fd=10
+I, [2018-09-01T22:17:22.410994 #5928]  INFO -- : worker=0 spawning...
+I, [2018-09-01T22:17:22.415181 #5928]  INFO -- : worker=1 spawning...
+I, [2018-09-01T22:17:22.418000 #5928]  INFO -- : master process ready
+I, [2018-09-01T22:17:22.424929 #5931]  INFO -- : worker=0 spawned pid=5931
+I, [2018-09-01T22:17:22.425117 #5931]  INFO -- : Refreshing Gem list
+I, [2018-09-01T22:17:22.428347 #5933]  INFO -- : worker=1 spawned pid=5933
+I, [2018-09-01T22:17:22.428524 #5933]  INFO -- : Refreshing Gem list
+I, [2018-09-01T22:17:26.069019 #5933]  INFO -- : worker=1 ready
+I, [2018-09-01T22:17:26.078584 #5931]  INFO -- : worker=0 ready
+bundler: failed to load command: unicorn (/home/deploy/.rbenv/versions/2.3.7/bin/unicorn)
+ArgumentError: Already running on PID:5928 (or pid=/home/deploy/railsqa/qa/pids/unicorn.pid is stale)
+  /home/deploy/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/unicorn-5.4.1/lib/unicorn/http_server.rb:205:in `pid='
+  /home/deploy/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/unicorn-5.4.1/lib/unicorn/http_server.rb:137:in `start'
+  /home/deploy/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/unicorn-5.4.1/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.7/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.7/bin/unicorn:22:in `<top (required)>'
