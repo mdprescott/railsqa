@@ -1,0 +1,66 @@
+<div class="text-center">
+  <p id="notice"><%= notice %></p>
+
+  <h4><strong><em><%= @question.body %></em></strong></h4>
+
+  <p>
+    <strong>Asked by:</strong>
+    <%= @question.user.name %>
+    <br>
+    <strong>Views:</strong>
+    <%= @answer.question.view_count %> |
+    <strong>Score:</strong>
+    <%= @answer.question.vote_score %>
+  </p>
+
+  <br>
+
+  <h5>
+    <strong>Answer:</strong>
+    <br>
+    <%= @answer.body %>
+  </h5>
+
+  <p>
+    <strong>Answered by:</strong>
+    <%= @answer.user.name %>
+    <br>
+    <strong>Views:</strong>
+    <%= @answer.view_count %> |
+    <strong>Score:</strong>
+    <% if @answer.vote_score.nil? %>
+    0
+    <% else %>
+    <%= @answer.vote_score %>
+    <% end %>
+  </p>
+
+  <small>
+    <%= link_to 'Upvote', user_question_answer_upvote_path(@user, @question, @answer) %> |
+    <%= link_to 'Downvote', user_question_answer_downvote_path(@user, @question, @answer) %>
+  </small>
+
+  <br><br>
+
+  <% if @answer.comments.any? %>
+  <div id="comments">
+    <h5>Comments:</h5>
+    <%= render @answer.comments %>
+  </div>
+  <% end %>
+
+  <br>
+
+  <div id="new-comment">
+    <h6>New Comment:</h6>
+    <%= render partial: "comments/form", locals: {comment: @answer.comments.new} %>
+  </div>
+
+  <br>
+
+
+
+  <%= link_to 'Edit', edit_user_question_answer_path(@user, @question, @answer) %> |
+  <%= link_to 'Back', user_question_path(@user, @question) %> |
+  <%= link_to 'Home', root_path %>
+</div>

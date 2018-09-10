@@ -1,0 +1,65 @@
+<div class="text-center">
+  <p id="notice"><%= notice %></p>
+
+  <h2><%= @question.title %></h2>
+
+  <p>
+    <strong>Asked by:</strong>
+    <%= @question.user.name %>
+    <br>
+  <small>
+    <strong>Views:</strong>
+    <%= @question.view_count %> |
+    <strong>Score:</strong>
+    <% if @question.vote_score.nil? %>
+    0
+    <% else %>
+    <%= @question.vote_score %>
+    <% end %>
+  </small>
+
+  </p>
+
+  <p>
+    <strong><em>
+    <%= @question.body %>
+  </em></strong>
+  </p>
+
+  <div>
+    <%= link_to 'Upvote', user_question_upvote_path(@user, @question) %> |
+    <%= link_to 'Downvote', user_question_downvote_path(@user, @question) %>
+  </div>
+
+  <br>
+
+  <%= link_to 'Submit New Answer', new_user_question_answer_path(@user, @question) %>
+
+  <br><br>
+
+  <% if @question.answers.any? %>
+  <div id="answer">
+    <h3>Answers:</h3>
+    <%= render @question.answers %>
+  </div>
+  <% end %>
+
+  <br>
+
+  <% if @question.comments.any? %>
+  <div id="comments">
+    <h5>Comments:</h5>
+    <%= render @question.comments %>
+  </div>
+  <% end %>
+
+  <br>
+
+  <div id="new-comment">
+    <h6>New Comment:</h6>
+    <%= render partial: "comments/form", locals: {comment: @post.comments.new} %>
+  </div>
+
+  <%= link_to 'Back', user_questions_path(@user) %> |
+  <%= link_to 'Home', root_path %>
+</div>

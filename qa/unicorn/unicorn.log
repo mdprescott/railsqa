@@ -15,3 +15,8 @@ ArgumentError: Already running on PID:5928 (or pid=/home/deploy/railsqa/qa/pids/
   /home/deploy/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/unicorn-5.4.1/bin/unicorn:126:in `<top (required)>'
   /home/deploy/.rbenv/versions/2.3.7/bin/unicorn:22:in `load'
   /home/deploy/.rbenv/versions/2.3.7/bin/unicorn:22:in `<top (required)>'
+I, [2018-09-08T21:45:31.201828 #5928]  INFO -- : reaped #<Process::Status: pid 5931 exit 0> worker=0
+I, [2018-09-08T21:45:31.208651 #5928]  INFO -- : reaped #<Process::Status: pid 5933 exit 0> worker=1
+I, [2018-09-08T21:45:31.212347 #5928]  INFO -- : reloading config_file=config/unicorn.rb
+I, [2018-09-08T21:45:31.485178 #5928]  INFO -- : done reloading config_file=config/unicorn.rb
+I, [2018-09-08T21:45:31.485402 #5928]  INFO -- : master complete

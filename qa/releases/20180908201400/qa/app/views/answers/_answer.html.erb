@@ -1,0 +1,30 @@
+<div>
+  <%= answer.body %>
+</div>
+
+<small>
+  <div>
+    <strong>Answered By: </strong>
+    <%= answer.user.name %>
+  </div>
+
+  <div>
+    Views: <%= answer.view_count %> |
+    Score:
+    <% if answer.vote_score.nil? %>
+    0
+    <% else %>
+    <%= answer.vote_score %>
+    <% end %>
+  </div>
+  <%= link_to 'Upvote', user_question_answer_upvote_path(@user, @question, answer) %> |
+  <%= link_to 'Downvote', user_question_answer_downvote_path(@user, @question, answer) %>
+  <br>
+  <%= link_to 'Show', user_question_answer_path(@user, @question, answer) %>
+  <div class="answer-admin">
+
+      <%= link_to 'Edit', edit_user_question_answer_path(@user, @question, answer) %> |
+      <%= link_to 'Delete', user_question_answer_path(@user, @question, answer), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</small>
+<br>

@@ -1,0 +1,48 @@
+<div class="text-center">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Questions</h1>
+
+  <%= link_to 'Ask New Question!', new_user_question_path %>
+
+  <br>
+  <br>
+
+  <table class="mx-auto">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Views</th>
+        <th>Score</th>
+        <th>Answers</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @questions.each do |question| %>
+        <tr>
+          <td><%= question.title %></td>
+          <td><%= question.user.name %></td>
+          <td><%= question.view_count %></td>
+          <td>
+            <% if question.vote_score.nil? %>
+            0
+            <% else %>
+            <%= question.vote_score %>
+            <% end %>
+          </td>
+          <td><%= question.answers.count %></td>
+          <td><%= link_to 'Show', user_question_path(@user, question) %></td>
+          <td class="question-admin"><%= link_to 'Edit', edit_user_question_path(@user, question) %></td>
+          <td class="question-admin"><%= link_to 'Destroy', user_question_path(@user, question), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Home', root_path %>
+</div>

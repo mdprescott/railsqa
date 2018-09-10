@@ -1,0 +1,12 @@
+<div class="text-center">
+  <h1>Ask A New Question!</h1>
+
+  <br>
+
+  <%= render 'form', locals: {question: @user.questions.new}  %>
+
+  <br>
+
+  <%= link_to 'Back', user_questions_path %> |
+  <%= link_to 'Home', root_path %>
+</div>

@@ -1,0 +1,34 @@
+<div class="text-center">
+  <br>
+
+  <p id="notice"><%= notice %></p>
+
+  <h2><%= @user.name %></h2>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+
+  <p>
+    <strong>Questions:</strong>
+    <% @questions = Question.all %>
+    <%= @questions.where(user_id: @user.id).count %>
+  </p>
+
+  <p>
+    <strong>Answers:</strong>
+    <% @answers = Answer.all %>
+    <%= @answers.where(user_id: @user.id).count %>
+  </p>
+
+  <p>
+    <strong>Comments:</strong>
+    <% @comments = Comment.all %>
+    <%= @comments.where(user_id: @user.id).count %>
+  </p>
+
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %> |
+  <%= link_to 'Home', root_path %>
+</div>

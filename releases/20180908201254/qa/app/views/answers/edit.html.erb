@@ -1,0 +1,11 @@
+<div class="text-center">
+  <h2>Question:</h2>
+  <p><strong><%= @question.body %></strong></p>
+  <h3>Edit Answer:</h2>
+
+  <%= render 'form', answer: @answer %>
+
+  <%= link_to 'Show', user_question_answer_path(@user, @question, @answer) %> |
+  <%= link_to 'Back', user_question_path(@user, @question) %> |
+  <%= link_to 'Home', root_path %>
+</div>

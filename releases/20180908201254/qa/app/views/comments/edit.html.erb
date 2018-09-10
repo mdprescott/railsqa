@@ -1,0 +1,22 @@
+<div class="text-center">
+  <br>
+  <h4><strong>Question: </strong><%= @question.body %></h4>
+  <br>
+  <% unless @answer.nil? %>
+    <h5><strong>Answer: </strong><%= @answer.body %></h5>
+    <p><small><em>Answered by: </em><%= @answer.user.name %></small></p>
+  <% end %>
+
+  <h6>Edit Comment</h6>
+
+  <%= render 'form', comment: @comment %>
+
+  <% if @answer.nil? %>
+    <%= link_to 'Delete', user_question_comment_path(@user, @question, @comment), method: :delete, data: { confirm: 'Are you sure?' } %> |
+    <%= link_to 'Back', user_question_path(@user, @question) %> |
+  <% else %>
+    <%= link_to 'Delete', user_question_answer_comment_path(@user, @question, @answer, @comment), method: :delete, data: { confirm: 'Are you sure?' } %> |
+    <%= link_to 'Back', user_question_answer_path(@user, @question, @answer) %> |
+  <% end %>
+  <%= link_to 'Home', root_path %>
+</div>

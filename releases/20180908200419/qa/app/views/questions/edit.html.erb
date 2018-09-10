@@ -1,0 +1,13 @@
+<div class="text-center">
+  <h1>Change Your Question!</h1>
+
+  <br>
+
+  <%= render 'form', locals: {question: @question} %>
+
+  <br>
+
+  <%= link_to 'Show', user_question_path(@user, @question) %> |
+  <%= link_to 'Back', user_questions_path(@user) %> |
+  <%= link_to 'Home', root_path %>
+</div>
